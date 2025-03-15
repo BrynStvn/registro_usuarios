@@ -37,7 +37,7 @@ Este es un pequeño sistema de **registro de usuarios** en Python que permite:
 1️⃣ Clona el repositorio:
 
 ```sh
-git clone https://github.com/tu-usuario/registro_usuarios.git
+git clone https://github.com/BrynStvn/registro_usuarios.git
 ```
 
 2️⃣ Entra en la carpeta del proyecto:
