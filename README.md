@@ -21,15 +21,18 @@ Este es un pequeño sistema de **registro de usuarios** en Python que permite:
 
 ```
 📂 registro_usuarios/
-│── 📂 src/                 # Código fuente
-│   │── 📄 menu.py          # Menú de navegación
-│   │── 📄 registro.py      # Funciones de registro
-│   │── 📄 data.py          # Almacenamiento de datos
-│── 📄 requirements.txt     # Librerías necesarias
-│── 📄 README.md            # Documentación del proyecto
-│── 📄 .gitignore           # Archivos a ignorar en Git
-│── 📄 main.py              # Archivo principal
-│── 📄 LICENSE              # Archivo de licencia
+│── 📂 src/                     # Código fuente
+│   │── 📂 database/            # Base de datos
+│       │── 📄 db_manager.py    # Conexión a la base de datos
+│       │── 📄 usuarios.db      # Archivo de la base de datos
+│   │── 📄 menu.py              # Menú de navegación
+│   │── 📄 registro.py          # Funciones de registro
+│   │── 📄 data.py              # Almacenamiento de datos
+│── 📄 requirements.txt         # Librerías necesarias
+│── 📄 README.md                # Documentación del proyecto
+│── 📄 .gitignore               # Archivos a ignorar en Git
+│── 📄 main.py                  # Archivo principal
+│── 📄 LICENSE                  # Archivo de licencia
 ```
 
 ## 🛠 Instalación
