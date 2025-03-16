@@ -1,10 +1,17 @@
-from src.data import usuarios, ver_usuarios
+from src.database import db_manager
 
 import os
 import re
 
 def validar_username(username):
-    if username in usuarios['username']:
+    conexion = db_manager.conectar()
+    cursor = conexion.cursor()
+
+    # Consulta para verificar si el username existe
+    cursor.execute("SELECT EXISTS(SELECT 1 FROM usuarios WHERE username = ?)", (username,))
+    existe = cursor.fetchone()[0]
+
+    if existe:
         return True
     else:
         return False
@@ -24,6 +31,7 @@ def validar_email(email):
 
 def registrar_usuario():
     os.system('cls' if os.name == 'nt' else 'clear')
+    db_manager.crear_tabla()
     print("REGISTRO DE USUARIOS")
     username = str(input("Nombre de usuario: "))
     while validar_username(username) == True:
@@ -59,7 +67,4 @@ def registrar_usuario():
         print(f"La edad {edad} no es válidad\nVerifica que sea un número positivo")
         edad = int(input("Edad: "))
     
-    usuarios['username'].append(username)
-    usuarios['password'].append(password)
-    usuarios['email'].append(email)
-    usuarios['edad'].append(edad)
+    db_manager.registrar_persona(username,password,email,edad)
