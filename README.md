@@ -1,80 +1,75 @@
-# 📌 Proyecto: Registro de Usuarios
+# Proyecto de Registro de Usuarios
 
-## 📝 Descripción
+Este proyecto es una aplicación web desarrollada con Flask, HTML, CSS, JavaScript y SQLite para la gestión de usuarios. Permite registrar, listar y gestionar usuarios a través de una interfaz gráfica sencilla.
 
-Este es un pequeño sistema de **registro de usuarios** en Python que permite:
-
-- Registrar nuevos usuarios con validaciones para **nombre de usuario, contraseña, email y edad**.
-- Ver la lista de usuarios registrados en una **tabla con Pandas**.
-- Un menú interactivo para navegar entre las opciones.
-
-## 🚀 Características
-
-✅ Validación de **nombre de usuario** (evita duplicados).\
-✅ Validación de **contraseña** (mínimo 6 caracteres).\
-✅ Validación de **email** (formato correcto: `usuario@dominio.com`).\
-✅ Validación de **edad** (número positivo).\
-✅ Uso de **Pandas** para mostrar usuarios registrados en formato tabla.\
-✅ Uso de `os.system('cls')` para limpiar la terminal en Windows/Linux.
-
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 📂 registro_usuarios/
-│── 📂 src/                     # Código fuente
-│   │── 📂 database/            # Base de datos
-│       │── 📄 db_manager.py    # Conexión a la base de datos
-│       │── 📄 usuarios.db      # Archivo de la base de datos
-│   │── 📄 menu.py              # Menú de navegación
-│   │── 📄 registro.py          # Funciones de registro
-│   │── 📄 data.py              # Almacenamiento de datos
-│── 📄 requirements.txt         # Librerías necesarias
-│── 📄 README.md                # Documentación del proyecto
-│── 📄 .gitignore               # Archivos a ignorar en Git
-│── 📄 main.py                  # Archivo principal
-│── 📄 LICENSE                  # Archivo de licencia
+│── 📂 static/                 # Archivos estáticos como CSS y JS
+│   │── 📂 css/                # Estilos de la aplicación
+│       │── 📄 flash_message.css   # Estilos para mensajes flash o notificaciones
+│       │── 📄 form_style.css      # Estilos para formularios
+│       │── 📄 nav_style.css       # Estilos de navegación (header, sidebar, etc.)
+│       │── 📄 table_style.css     # Estilos para tablas (listado de usuarios, datos, etc.)
+│   │── 📂 js/                 # Scripts JavaScript
+│       │── 📄 script.js       # Archivo principal de scripts JS (validaciones, interactividad)
+│── 📂 templates/                # Archivos HTML con Jinja2 para renderizar vistas
+│   │── 📄 index.html          # Página principal del sistema
+│   │── 📄 users.html          # Página de gestión de usuarios
+│── 📄 .gitignore              # Archivos y carpetas a excluir en Git
+│── 📄 app.py                  # Archivo principal de Flask (define rutas y ejecuta la aplicación)
+│── 📄 db_manager.py           # Módulo para el manejo de la base de datos SQLite
+│── 📄 usuarios.db             # Base de datos SQLite (debe estar en .gitignore)
+│── 📄 LICENSE                 # Licencia del proyecto
+│── 📄 requirements.txt        # Dependencias necesarias para el proyecto
+│── 📄 README.md               # Documentación del proyecto
 ```
 
-## 🛠 Instalación
+## Instalación y Configuración
 
-1️⃣ Clona el repositorio:
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/registro_usuarios.git
+   cd registro_usuarios
+   ```
 
-```sh
-git clone https://github.com/BrynStvn/registro_usuarios.git
-```
+2. Crear un entorno virtual e instalar dependencias:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # En Windows usa: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-2️⃣ Entra en la carpeta del proyecto:
+3. Ejecutar la aplicación:
+   ```bash
+   python app.py
+   ```
 
-```sh
-cd registro_usuarios
-```
+4. Acceder a la aplicación desde el navegador:
+   ```
+   http://127.0.0.1:5000/
+   ```
 
-3️⃣ Instala las dependencias necesarias:
+## Uso
 
-```sh
-pip install -r requirements.txt
-```
+- **Registro de Usuarios:** Permite agregar nuevos usuarios.
+- **Listado de Usuarios:** Muestra una tabla con los usuarios registrados.
 
-## ▶️ Uso
+## Tecnologías Utilizadas
 
-Ejecuta el siguiente comando para iniciar el programa:
+- **Backend:** Flask (Python)
+- **Base de Datos:** SQLite
+- **Frontend:** HTML, CSS, JavaScript
 
-```sh
-python src/main.py
-```
+## Mejoras Futuras
 
-Sigue las instrucciones en pantalla para **registrar usuarios, ver la lista de usuarios o salir**.
+- Implementar Flask-SQLAlchemy para mayor flexibilidad.
+- Migrar a MySQL para mejor escalabilidad.
+- Agregar autenticación con Flask-Login.
 
-## 📌 Requisitos
+## Licencia
 
-- **Python 3.8+**
-- **Librerías:** Pandas
-
-## 📜 Licencia
-
-Este proyecto es de código abierto bajo la licencia MIT.
+Este proyecto está licenciado bajo la MIT License - ver el archivo **LICENSE** para más detalles.
 
 ---
-
-📌 **Autor:** Brayan Padilla Yande 👨‍💻
-

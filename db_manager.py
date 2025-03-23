@@ -35,11 +35,4 @@ def registrar_persona(username, password, email, edad):
     conexion.commit()
     conexion.close()
 
-def mostrar_personas():
-    """Muestra todos los usuarios registrados."""
-    conexion = conectar()
-    cursor = conexion.cursor()
-    cursor.execute("SELECT * FROM usuarios")
-    usuario = cursor.fetchall()
-    conexion.close()
-    return usuario
+crear_tabla()
